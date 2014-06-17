@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2014 The AOSP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from i9500 device
-$(call inherit-product, device/samsung/i9500/i9500.mk)
+$(call inherit-product, device/samsung/i9500/device.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_i9500

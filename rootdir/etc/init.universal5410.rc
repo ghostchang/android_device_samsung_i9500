@@ -250,6 +250,28 @@ on boot
     chmod 0664 /sys/class/devfreq/exynos5-busfreq-mif/en_monitoring
     chmod 0664 /sys/class/devfreq/exynos5-busfreq-int/en_monitoring
 
+# SSRM
+    chown radio system /sys/class/lcd/panel/siop_enable
+    chown radio system /sys/class/graphics/fb0/lcdfreq/level
+    chown radio system /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_min_lock
+    chown radio system /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock
+    chown radio system /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_table
+    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/min_freq
+    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/max_freq
+    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/freq_table
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_h
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/game_mode
+    chmod 0660 /sys/class/lcd/panel/siop_enable
+    chmod 0660 /sys/class/graphics/fb0/lcdfreq/level
+    chmod 0660 /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_min_lock
+    chmod 0660 /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock
+    chmod 0660 /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_table
+    chmod 0660 /sys/class/devfreq/exynos5-busfreq-mif/min_freq
+    chmod 0660 /sys/class/devfreq/exynos5-busfreq-mif/max_freq
+    chmod 0660 /sys/class/devfreq/exynos5-busfreq-mif/freq_table
+    chmod 0660 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_h
+    chmod 0660 /sys/devices/system/cpu/cpufreq/ondemand/game_mode
+
 # Ondemand
     chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_h
     chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_h
@@ -259,8 +281,24 @@ on boot
     chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/conservative_step
     chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_conservative_mode
     chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_conservative_mode
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_l
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_l
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_step_level_l
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_step_level_l
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_step_level_b
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_step_level_b
+    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 # Core Control
+    chown radio system /dev/b.L_operator
+    chmod 0660 /dev/b.L_operator
+    chown radio system /dev/bL_status
+    chmod 0660 /dev/bL_status
     chown radio system /sys/devices/system/cpu/cpu0/cpuidle/state1/disable
     chown radio system /sys/devices/system/cpu/cpu1/cpuidle/state1/disable
     chown radio system /sys/devices/system/cpu/cpu2/cpuidle/state1/disable
@@ -269,44 +307,6 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpu1/cpuidle/state1/disable
     chmod 0660 /sys/devices/system/cpu/cpu2/cpuidle/state1/disable
     chmod 0660 /sys/devices/system/cpu/cpu3/cpuidle/state1/disable
-
-# Core temp sensor
-    chown radio system /sys/devices/platform/exynos5-tmu/temp
-    chown radio system /sys/devices/platform/exynos5-tmu/curr_temp
-
-# Quadrant Benchmark
-    chown radio system /sys/class/thermal/thermal_zone0/boost_mode
-    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/min_freq
-    chown radio system /sys/class/devfreq/exynos5-busfreq-int/min_freq
-    chown radio system /sys/devices/system/cpu/cpufreq/iks-cpufreq/min_freq
-    chown radio system /sys/devices/system/cpu/cpufreq/iks-cpufreq/max_freq
-    chown radio system /sys/devices/system/cpu/cpufreq/iks-cpufreq/freq_table
-    chown radio system /sys/devices/system/cpu/cpufreq/iks-cpufreq/max_eagle_count
-    chown radio system /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock
-    chown radio system /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_min_lock
-    chown radio system /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_table
-    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/freq_table
-    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/min_freq
-    chown radio system /sys/class/devfreq/exynos5-busfreq-mif/max_freq
-    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_h
-    chmod 0664 /sys/class/thermal/thermal_zone0/boost_mode
-    chmod 0664 /sys/class/devfreq/exynos5-busfreq-mif/min_freq
-    chmod 0664 /sys/class/devfreq/exynos5-busfreq-int/min_freq
-    chmod 0664 /sys/devices/system/cpu/cpufreq/iks-cpufreq/min_freq
-    chmod 0664 /sys/devices/system/cpu/cpufreq/iks-cpufreq/max_freq
-    chmod 0664 /sys/devices/system/cpu/cpufreq/iks-cpufreq/freq_table
-    chmod 0664 /sys/devices/system/cpu/cpufreq/iks-cpufreq/max_eagle_count
-    chmod 0664 /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_max_lock
-    chmod 0664 /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_min_lock
-    chmod 0664 /sys/devices/platform/pvrsrvkm.0/sgx_dvfs_table
-    chmod 0664 /sys/class/devfreq/exynos5-busfreq-mif/freq_table
-    chmod 0664 /sys/class/devfreq/exynos5-busfreq-mif/min_freq
-    chmod 0664 /sys/class/devfreq/exynos5-busfreq-mif/max_freq
-    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_h
-
-# game_mode
-    chown radio system /sys/devices/system/cpu/cpufreq/ondemand/game_mode
-    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/game_mode
 
 # AMOLED Color Adjustment
     chown radio system /sys/class/power_supply/battery/temp

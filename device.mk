@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013 The AOSP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -49,6 +49,19 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     mixer_paths.xml \
     tinymix
+    
+# Audio Configuration
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.audio.handset.mic.type=digital \
+    persist.audio.dualmic.config=endfire \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=false \
+    af.resampler.quality=4
+    
+# Setup custom emergency number list based on the MCC. This is needed by RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.custom_ecc=1
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -62,6 +75,11 @@ PRODUCT_PACKAGES += \
     camera.universal5410 \
     libhwjpeg
 
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapersPicker \
+    librs_jni
+    
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -147,6 +165,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch
 
+# for off charging mode
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+    
+# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.call_ring.multiple=0
+    
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
@@ -165,6 +192,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     wifi.interface=wlan0
+    wifi.supplicant_scan_interval=15
+    
+# Enable AAC 5.1 output
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.aac_51_output_enabled=true
+
+# Do not power down SIM card when modem is sent to Low Power Mode.
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.apm_sim_not_pwdn=1
 
 # Permissions
 PRODUCT_COPY_FILES += \
