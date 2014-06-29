@@ -48,7 +48,11 @@ PRODUCT_PACKAGES += \
     audio.primary.universal5410 \
     audio.usb.default \
     mixer_paths.xml \
-    tinymix
+    tinymix \
+    audio.r_submix.default
+    
+PRODUCT_PACKAGES += \
+    power.universal5410
     
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -181,7 +185,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
