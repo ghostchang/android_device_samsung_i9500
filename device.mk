@@ -21,10 +21,6 @@ LOCAL_PATH := device/samsung/i9500
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.universal5410 \
@@ -188,11 +184,6 @@ PRODUCT_COPY_FILES += \
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
-
-# Enable repeatable keys in CWM
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.enable_key_repeat=true \
-    ro.cwm.repeatable_keys=114,115
 
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \

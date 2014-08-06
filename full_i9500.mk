@@ -18,6 +18,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from i9500 device
 $(call inherit-product, device/samsung/i9500/device.mk)
 
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit the APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_i9500
 PRODUCT_DEVICE := i9500

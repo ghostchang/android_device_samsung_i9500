@@ -1,1 +1,1 @@
-add_lunch_combo aosp_i9500-userdebug
+add_lunch_combo omni_i9500-userdebug
