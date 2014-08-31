@@ -112,6 +112,9 @@ WIFI_BAND                        := 802_11_ABG
 # Webkit
 ENABLE_WEBGL := true
 
+#SuperUser
+SUPERUSER_EMBEDDED := true
+
 # Filesystems
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
@@ -148,4 +151,4 @@ BOARD_BATTERY_DEVICE_NAME := battery
 #TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # inherit from the proprietary version
--include vendor/samsung/i9500/BoardConfigVendor.mk
+-include vendor/samsung/ja3g/BoardConfigVendor.mk
